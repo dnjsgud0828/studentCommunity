@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css"rel="stylesheet" type="text/css"/>
+    <link href="css/table.css" rel="stylesheet" type="text/css"/>
+    <title>hireInfo</title>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="logo.png" alt="로고"></div>
+            <!--검색바-->
+            <div class="search-bar">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button>검색</button>
+            </div>
+            <!--로그인/회원가입/myPage 버튼-->
+            <div class="user-actions">
+                <button>로그인</button>
+                <button>회원가입</button>
+                <button>MY PAGE</button>
+            </div>
+        </div>
+        <!--네비게이터-->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">재용정보</a></li>
+                <li class="dropdown">
+                    <a href="#">공모전/대외활동</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">대외활동</a></li>
+                        <li><a href="#">공모전</a></li>
+                        <li><a href="#">장학금</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">IT직군 로드맵</a></li>
+                <li><a href="#">자소서</a></li>
+                <li><a href="#">커뮤니티</a></li>
+            </ul>
+        </nav>
+    </header>
+    <table>
+        <caption>채용공고 상세검색</caption>
+        <thead>
+            <tr>
+                <th scope="col">기업형태</th>
+                <th scope="col">고용형태</th>
+                <th scope="col">모집직무</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" name="large"/>대기업
+                </td>
+                <td>
+                    <input type="checkbox" name="fullTime"/>정규직
+                </td>
+                <td>
+                    <input type="checkbox" name="front"/>프론트엔드
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="small"/>중소기업
+                </td>
+                <td>
+                    <input type="checkbox" name="contract"/>계약직
+                </td>
+                <td>
+                    <input type="checkbox" name="back"/>백엔드
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="public"/>공기업
+                </td>
+                <td>
+                    <input type="checkbox" name="intern"/>인턴
+                </td>
+                <td>
+                    <input type="checkbox" name="Mobile"/>모바일
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="NW"/>N/W개발자
+                </td>
+            </tr>
+        </tbody>  
+    </table>
+    <main><!--채용공고-->
+
+    </main>
+
+    <!--페이지 맨 위로 옮기는 기능-->
+    <script src="scripts.js"></script>
+</body>
+</html>

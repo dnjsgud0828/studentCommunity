@@ -1,0 +1,40 @@
+table {
+    margin: 0 auto;
+    margin-top: 20px;
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    border: 2px solid black;;
+}
+
+th, td {
+    border: none; /* 기본적으로 테두리 없애기 */
+    padding: 10px;
+}
+
+caption {
+    caption-side: top; /* 기본값: top, 원하는 위치에 따라 설정 가능 */
+    margin-bottom: 15px; /* 간격 설정 */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* 첫 번째 열과 두 번째 열 사이에만 세로 테두리 추가 */
+td:nth-child(1), td:nth-child(2), th:nth-child(1), th:nth-child(2) {
+    border-right: 1px solid black;
+}
+
+/* 마지막 열과 두 번째 열 사이에만 세로 테두리 추가 */
+td:nth-child(2), td:nth-child(3), th:nth-child(2), th:nth-child(3) {
+    border-left: 1px solid black;
+}
+
+/* 헤더에 전체 상단 테두리 추가 */
+th {
+    border-bottom: 1px solid black;
+}
+
+/* 마지막 행에만 하단 테두리 추가 */
+tr:last-child td {
+    border-bottom: 1px solid black;
+}
