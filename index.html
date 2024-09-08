@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css"rel="stylesheet" type="text/css"/>
     <link href="css/table.css" rel="stylesheet" type="text/css"/>
-    <link href="css/hireInfo.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jobInfo.css" rel="stylesheet" type="text/css"/>
     <title>hireInfo</title>
 </head>
 <body>
+    <!-- 네비게이션 -->
     <header>
         <div class="top-bar">
             <div class="logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="logo.png" alt="로고"></div>
@@ -42,7 +43,8 @@
             </ul>
         </nav>
     </header>
-    <table> <!--메뉴 선택 Bar-->
+    <!--조건 선택 -->
+    <table> 
         <caption>채용공고 상세검색</caption>
         <thead>
             <tr>
@@ -54,24 +56,24 @@
         <tbody>
             <tr>
                 <td>
-                    <input type="checkbox" name="large"/>대기업
+                    <input type="checkbox" name="companyType" value="대기업"/>대기업
                 </td>
                 <td>
-                    <input type="checkbox" name="fullTime"/>정규직
+                    <input type="checkbox" name="employmentType" value="정규직"/>정규직
                 </td>
                 <td>
-                    <input type="checkbox" name="front"/>프론트엔드
+                    <input type="checkbox" name="jobType" value="프론트엔드"/>프론트엔드
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="small"/>중소기업
+                    <input type="checkbox" name="companyType" value="중소기업"/>중소기업
                 </td>
                 <td>
-                    <input type="checkbox" name="contract"/>계약직
+                    <input type="checkbox" name="employmentType" value="계약직"/>계약직
                 </td>
                 <td>
-                    <input type="checkbox" name="back"/>백엔드
+                    <input type="checkbox" name="jobType" value="백엔드"/>백엔드
                 </td>
             </tr>
             <tr>
@@ -79,124 +81,137 @@
                     <input type="checkbox" name="public"/>공기업
                 </td>
                 <td>
-                    <input type="checkbox" name="intern"/>인턴
+                    <input type="checkbox" name="employmentType" value="인턴"/>인턴
                 </td>
                 <td>
-                    <input type="checkbox" name="Mobile"/>모바일
+                    <input type="checkbox" name="jobType" value="모바일"/>모바일
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td>
-                    <input type="checkbox" name="NW"/>N/W개발자
+                    <input type="checkbox"  name="jobType" value="기타"/>기타
                 </td>
             </tr>
         </tbody>  
     </table>
     <main><!--채용공고, 서브 페이지를 만들면서 js파일로 목록이 추가 될 수 있도록 구현-->
-        <table>
+        <table class = "jobTable">
             <thead>
                 <tr>
                     <th>기업명</th>
                     <th>공고명</th>
                     <th>채용형태</th>
+                    <th>모집직무</th>
                     <th>근무지역</th>
                     <th>마감일</th>
                 </tr>
             </thead>
             <tbody>
-                <tr> <!--DB-->
+                <tr data-company-type="대기업" data-employment-type="정규직" data-job-type="백엔드"> <!--DB-->
                     <td>당근</td>
-                    <td>Software Engineer, Data</td>
+                    <td><a href="page1.html" target="_blank">Software Engineer, Data</a></td>
                     <td>정규직</td>
+                    <td>백엔드</td>
                     <td>서울 서초구</td>
                     <td>상시채용</td>
                 </tr>
-                <tr>  
+                <tr data-company-type="중소기업" data-employment-type="정규직" data-job-type="백엔드">  
                     <!--백엔드-->
                     <td>구름</td>
-                    <td>백엔드 개발자</td>
+                    <td><a href="page1.html" target="_blank">백엔드 개발자</a></td>
                     <td>정규직</td>
+                    <td>백엔드</td>
                     <td>경기도 성남시</td>
                     <td>상시채용</td>
                 </tr>
-                <tr> <!--백엔드-->
+                <tr data-company-type="대기업" data-employment-type="정규직" data-job-type="백엔드"> <!--백엔드-->
                     <td>토스씨엑스</td>
-                    <td>Call System Developer</td>
+                    <td><a href="page1.html" target="_blank">Call System Developer</a></td>
                     <td>정규직</td>
+                    <td>백엔드</td>
                     <td>서울 강남구</td>
                     <td>2024.10.31</td>
                 </tr>
-                <tr>
+                <tr data-company-type="중소기업" data-employment-type="정규직" data-job-type="기타">
                     <!-- 인덱스 개발 -->
                     <td>에프앤가이드</td>
-                    <td>인덱스개발팀</td>
+                    <td><a href="page1.html" target="_blank">인덱스개발팀</a></td>
                     <td>정규직</td>
+                    <td>기타</td>
                     <td>서울 강서구</td>
                     <td>2024.08.31</td>
                 </tr>
-                <tr>
+                <tr data-company-type="대기업" data-employment-type="정규직" data-job-type="기타">
                     <!-- N/W -->
                     <td>SK Telecom</td>
-                    <td>Sk 텔레콤 Junior Talent 채용 Infra 직군</td>
+                    <td><a href="page1.html" target="_blank">Sk 텔레콤 Junior Talent 채용 Infra 직군</a></td>
                     <td>정규직</td>
+                    <td>기타</td>
                     <td>서울 중구</td>
                     <td>2024.08.28</td>
                 </tr>
-                <tr>
+                <tr data-company-type="대기업" data-employment-type="정규직" data-job-type="모바일">
                     <!--Android-->
                     <td>페이타랩</td>
-                    <td>Android Developer</td>
+                    <td><a href="page1.html" target="_blank">Android Developer</a></td>
                     <td>정규직</td>
+                    <td>모바일</td>
                     <td>서울 강남구</td>
                     <td>2024.09.22</td>
                 </tr>
-                <tr>
+                <tr data-company-type="대기업" data-employment-type="정규직" data-job-type="모바일">
                     <!-- IOS -->
                     <td>페이타랩</td>
-                    <td>IOs Developer</td>
+                    <td><a href="page1.html" target="_blank">IOs Developer</a></td>
                     <td>정규직</td>
+                    <td>모바일</td>
                     <td>서울 강남구</td>
                     <td>2024.09.22</td>
                 </tr>
-                <tr>
+                <tr data-company-type="중소기업" data-employment-type="정규직" data-job-type="기타">
                     <!-- ML -->
                     <td>딜리셔스</td>
-                    <td>ML 엔지니어</td>
+                    <td><a href="page1.html" target="_blank">ML 엔지니어</a></td>
                     <td>정규직</td>
+                    <td>기타</td>
                     <td>서울 종로구</td>
                     <td>2024.09.30</td>
                 </tr>
-                <tr>
+                <tr data-company-type="중소기업" data-employment-type="정규직" data-job-type="백엔드">
                     <!-- 트래픽 제어 -->
                     <td>STCLab</td>
-                    <td>대용량 트래픽 제어 엔진 개발</td>
+                    <td><a href="page1.html" target="_blank">대용량 트래픽 제어 엔진 개발</a></td>
                     <td>정규직</td>
+                    <td>백엔드</td>
                     <td>서울 강남구</td>
                     <td>2024.10.21</td>
                 </tr>
-                <tr>
+                <tr data-company-type="중소기업" data-employment-type="정규직" data-job-type="백엔드">
                     <!-- 백엔드 서버 DB -->
                     <td>에스테이트 클라우드</td>
-                    <td>서버 개발자 Server Developer 신입/경력 채용</td>
+                    <td><a href="page1.html" target="_blank">서버 개발자 Server Developer 신입/경력 채용</a></td>
                     <td>정규직</td>
+                    <td>백엔드</td>
                     <td>서울 강남구</td>
                     <td>2024.09.20</td>
                 </tr>
-                <tr>
+                <tr data-company-type="중소기업" data-employment-type="정규직" data-job-type="프론트엔드">
                     <!-- 프론트 -->
                     <td>SO & Company</td>
-                    <td>Digital Project Coordinator</td>
+                    <td><a href="page1.html" target="_blank">Digital Project Coordinator</a></td>
                     <td>정규직</td>
+                    <td>프론트엔드</td>
                     <td>서울 영등포구</td>
                     <td>2024.08.25</td>
                 </tr>
-                <tr>
+                <tr data-company-type="중소기업" data-employment-type="정규직" data-job-type="백엔드">
                     <!-- 서버&인프라 구축 -->
                     <td>Poople & Technology</td>
-                    <td>시스템 엔지니어</td>
+                    <td><a href="page1.html" target="_blank">시스템 엔지니어</a></td>
                     <td>정규직</td>
+                    <td>백엔드</td>
                     <td>서울 강남구</td>
                     <td>상시채용</td>
                 </tr>
