@@ -2,11 +2,10 @@
 table {
     word-break: break-all;
     margin: 0 auto;
-    margin-top: 20px;
     table-layout: fixed;
-    width: 900px;
+    width: 1200px;
     border-collapse: collapse;
-    border: 2px solid black;
+    border: 2px solid lightgray;
     background-color: white;
 }
 
@@ -16,10 +15,11 @@ th, td {
 }
 
 caption {
-    caption-side: top; /* 기본값: top, 원하는 위치에 따라 설정 가능 */
-    margin-bottom: 15px; /* 간격 설정 */
+    margin-top: 20px;
+    margin-bottom: 15px;
     font-weight: bold;
     font-size: 1.2em;
+    text-align: left;
 }
 
 /* 헤더에 전체 상단 테두리 추가 */
